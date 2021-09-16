@@ -1,0 +1,8 @@
+/Users/aiden/Desktop/Godot_Projects/PacMan/.mono/temp/bin/Debug/PacMan.dll
+/Users/aiden/Desktop/Godot_Projects/PacMan/.mono/temp/bin/Debug/PacMan.pdb
+/Users/aiden/Desktop/Godot_Projects/PacMan/.mono/temp/obj/Debug/PacMan.csprojAssemblyReference.cache
+/Users/aiden/Desktop/Godot_Projects/PacMan/.mono/temp/obj/Debug/PacMan.AssemblyInfoInputs.cache
+/Users/aiden/Desktop/Godot_Projects/PacMan/.mono/temp/obj/Debug/PacMan.AssemblyInfo.cs
+/Users/aiden/Desktop/Godot_Projects/PacMan/.mono/temp/obj/Debug/PacMan.csproj.CoreCompileInputs.cache
+/Users/aiden/Desktop/Godot_Projects/PacMan/.mono/temp/obj/Debug/PacMan.dll
+/Users/aiden/Desktop/Godot_Projects/PacMan/.mono/temp/obj/Debug/PacMan.pdb

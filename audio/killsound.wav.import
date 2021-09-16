@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/killsound.wav-4f7591850e99fb140fe64ea6c279fe82.sample"
+
+[deps]
+
+source_file="res://audio/killsound.wav"
+dest_files=[ "res://.import/killsound.wav-4f7591850e99fb140fe64ea6c279fe82.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

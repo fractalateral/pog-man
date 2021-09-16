@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EatPog.wav-4049c55a790f97450f21a5620581d6b5.sample"
+
+[deps]
+
+source_file="res://audio/EatPog.wav"
+dest_files=[ "res://.import/EatPog.wav-4049c55a790f97450f21a5620581d6b5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,179 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://press-start-2p-font/PressStart2P-vaV7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/OptionsPane.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TitleLogo.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "loading_anim"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Loading.", "Loading..", "Loading..." ]
+}
+
+[node name="PacMenuScreen" type="Node2D"]
+
+[node name="LoadingPanel" type="CenterContainer" parent="."]
+visible = false
+margin_right = 224.0
+margin_bottom = 304.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="LoadingPanel"]
+margin_left = 112.0
+margin_top = 152.0
+margin_right = 112.0
+margin_bottom = 152.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadingLabel" type="Label" parent="LoadingPanel/ColorRect"]
+margin_right = 128.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 1 )
+text = "Loading."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LoadingPanel/ColorRect/LoadingLabel"]
+anims/loading_anim = SubResource( 2 )
+
+[node name="OptionsPane" parent="LoadingPanel/ColorRect" instance=ExtResource( 2 )]
+OPTIONS_LIST = [  ]
+
+[node name="MainMenuPanel" type="CenterContainer" parent="."]
+visible = false
+margin_right = 224.0
+margin_bottom = 304.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MainMenuPanel"]
+margin_left = 112.0
+margin_top = 152.0
+margin_right = 112.0
+margin_bottom = 152.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsPane" parent="MainMenuPanel/ColorRect" instance=ExtResource( 2 )]
+OPTIONS_LIST = [ "START", "OPTIONS", "CREDITS", "HI-SCORES", "LVLDEBUG", "EXIT" ]
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuPanel/ColorRect"]
+margin_left = -102.0
+margin_top = -64.0
+margin_right = 34.0
+margin_bottom = -40.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsMenuPanel" type="CenterContainer" parent="."]
+visible = false
+margin_right = 224.0
+margin_bottom = 304.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="OptionsMenuPanel"]
+margin_left = 112.0
+margin_top = 152.0
+margin_right = 112.0
+margin_bottom = 152.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsPane" parent="OptionsMenuPanel/ColorRect" instance=ExtResource( 2 )]
+OPTIONS_LIST = [ ".SWAP PacSkinsPaths", "RETURN" ]
+RETURN_SCREEN = "MAIN"
+
+[node name="CreditsPanel" type="CenterContainer" parent="."]
+visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CreditsPanel"]
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsPane" parent="CreditsPanel/ColorRect" instance=ExtResource( 2 )]
+OPTIONS_LIST = [ ".CREDITS", "RETURN" ]
+RETURN_SCREEN = "MAIN"
+
+[node name="RegisterPanel" type="CenterContainer" parent="."]
+visible = false
+margin_right = 224.0
+margin_bottom = 304.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="RegisterPanel"]
+margin_left = 112.0
+margin_top = 152.0
+margin_right = 112.0
+margin_bottom = 152.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsPane" parent="RegisterPanel/ColorRect" instance=ExtResource( 2 )]
+OPTIONS_LIST = [ "A", "A", "A", "REGISTER", "RETURN" ]
+RETURN_SCREEN = "MAIN"
+
+[node name="HighScorePanel" type="CenterContainer" parent="."]
+visible = false
+margin_right = 224.0
+margin_bottom = 304.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="HighScorePanel"]
+margin_left = 112.0
+margin_top = 152.0
+margin_right = 112.0
+margin_bottom = 152.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsPane" parent="HighScorePanel/ColorRect" instance=ExtResource( 2 )]
+margin_left = -106.0
+margin_top = -72.0
+margin_right = 42.0
+margin_bottom = -36.0
+OPTIONS_LIST = [  ]
+RETURN_SCREEN = "MAIN"

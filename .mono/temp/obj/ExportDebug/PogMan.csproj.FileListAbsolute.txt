@@ -1,0 +1,8 @@
+/Users/aiden/Desktop/Godot_Projects/PogMan/.mono/temp/bin/ExportDebug/PogMan.dll
+/Users/aiden/Desktop/Godot_Projects/PogMan/.mono/temp/bin/ExportDebug/PogMan.pdb
+/Users/aiden/Desktop/Godot_Projects/PogMan/.mono/temp/obj/ExportDebug/PogMan.csprojAssemblyReference.cache
+/Users/aiden/Desktop/Godot_Projects/PogMan/.mono/temp/obj/ExportDebug/PogMan.AssemblyInfoInputs.cache
+/Users/aiden/Desktop/Godot_Projects/PogMan/.mono/temp/obj/ExportDebug/PogMan.AssemblyInfo.cs
+/Users/aiden/Desktop/Godot_Projects/PogMan/.mono/temp/obj/ExportDebug/PogMan.csproj.CoreCompileInputs.cache
+/Users/aiden/Desktop/Godot_Projects/PogMan/.mono/temp/obj/ExportDebug/PogMan.dll
+/Users/aiden/Desktop/Godot_Projects/PogMan/.mono/temp/obj/ExportDebug/PogMan.pdb
