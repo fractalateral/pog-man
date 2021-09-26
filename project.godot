@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="PogMan"
+config/description="Small game made using the Godot Engine for learning purposes."
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 

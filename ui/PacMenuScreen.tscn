@@ -116,18 +116,24 @@ RETURN_SCREEN = "MAIN"
 
 [node name="CreditsPanel" type="CenterContainer" parent="."]
 visible = false
+margin_right = 224.0
+margin_bottom = 304.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect" type="ColorRect" parent="CreditsPanel"]
+margin_left = 112.0
+margin_top = 152.0
+margin_right = 112.0
+margin_bottom = 152.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="OptionsPane" parent="CreditsPanel/ColorRect" instance=ExtResource( 2 )]
-OPTIONS_LIST = [ ".CREDITS", "RETURN" ]
+OPTIONS_LIST = [ ".Credits", "RETURN" ]
 RETURN_SCREEN = "MAIN"
 
 [node name="RegisterPanel" type="CenterContainer" parent="."]

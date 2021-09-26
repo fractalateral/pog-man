@@ -15,39 +15,6 @@ public class PacMenuScreen : Node2D {
     public Container CurrentPanel = null;
     public OptionsPane CurrentOptionsPane = null;
 
-    public String[] PacSkinsPaths = new String[] {
-        "res://player/PogManCharacter.png",
-        "res://player/PogMan_OG.png",
-        "res://player/PogMan_Pepe.png"
-    };
-
-    private String[] MainMenuPanel_Options = new String[] {
-        "START",
-        "OPTIONS",
-        "CREDITS",
-        "HI-SCORES",
-        "LVLDEBUG",
-        "EXIT"
-    };
-
-    private String[] OptionsMenuPanel_Options = new String[] {
-        ".VAR PacSkinsPaths",
-        "RETURN"
-    };
-
-    private String[] CreditsMenuPanel_Options = new String[] {
-        ".VAR Credits",
-        "RETURN"
-    };
-
-    private String[] RegisterMenuPanel_Options = new String[] {
-        "A",
-        "A",
-        "A",
-        "REGISTER",
-        "RETURN"
-    };
-
     public override void _Ready() {
         MainScene = GetNode<Main>("..");
 
@@ -70,6 +37,7 @@ public class PacMenuScreen : Node2D {
         foreach (var menuKeyPair in MenuPanels) {
             OptionsPane menuOptPane = menuKeyPair.Value.GetNode<OptionsPane>("ColorRect/OptionsPane");
             menuOptPane.Connect("OptionSelected", this, "MenuOptionSelected");
+            menuOptPane.Connect("SwitchPogManSkin", MainScene, "SwitchPogManSkin");
             foreach (String presetOption in menuOptPane.OPTIONS_LIST) {
                 menuOptPane.AddOption(presetOption);
             }
@@ -118,107 +86,6 @@ public class PacMenuScreen : Node2D {
                 break;
         }
     }
-
-    public void MainMenuOptionSelected(String optionName, int optionIndex) {
-        switch (optionName) {
-            case "START":
-                MainScene.LevelTemplatePath = "res://level/PacLevel.tscn";
-                MainScene.SwitchPacLevel(1);
-                break;
-            case "LVLDEBUG":
-                GD.Print("LVLDEBUG");
-                MainScene.LevelTemplatePath = "res://level/PacLevelEZ.tscn";
-                MainScene.DebugMode = true;
-                MainScene.SwitchPacLevel(1);
-                break;
-            case "EXIT":
-                GetTree().CallDeferred("quit");
-                break;
-            default:
-                DisplayMenu(optionName);
-                break;
-        }
-    }
-
-    /*public void OptionsMenuOptionSelected(String optionName, int optionIndex) {
-        switch (optionName) {
-            case "RETURN":
-                DisplayMenu(0);
-                break;
-        }
-    }
-
-    public void CreditsMenuOptionSelected(String optionName, int optionIndex) {
-        switch (optionName) {
-            case "RETURN":
-                DisplayMenu(0);
-                break;
-        }
-    }
-
-    public void HighScoreMenuOptionSelected(String optionName, int optionIndex) {
-        switch (optionName) {
-            case "RETURN":
-                DisplayMenu(0);
-                break;
-        }
-    }
-
-    public void RegisterMenuOptionSelected(String optionName, int optionIndex) {
-        switch (optionName) {
-            case "REGISTER":
-                String registerName = "";
-                foreach (Node n in CurrentOptionsPane.Options) {
-                    if (n.GetNode<Label>("Label").Text.Length == 1) {
-                        registerName += n.GetNode<Label>("Label").Text;
-                    }
-                }
-                if (!MainScene.HighScores.ContainsKey(registerName)) MainScene.HighScores.Add(registerName, MainScene.finalScore);
-                else if (((Godot.Collections.Dictionary<String, int>)MainScene.HighScores)[registerName] < MainScene.finalScore) MainScene.HighScores[registerName] = MainScene.finalScore;
-                MainScene.SaveHighScores();
-
-                DisplayMenu(0);
-                break;
-            case "RETURN":
-                DisplayMenu(0);
-                break;
-        }
-    }*/
-/*
-    public void DisplayMenu(int index) {
-        if (index >= 0) {
-            CurrentPanel = MenuPanels[index];
-            CurrentOptionsPane = CurrentPanel.GetNodeOrNull<OptionsPane>("ColorRect/OptionsPane");
-
-            for (int x = 0; x < MenuPanels.Length; x++) {
-                if (x == index) {
-                    MenuPanels[x].Visible = true;
-                } else {
-                    MenuPanels[x].Visible = false;
-                }
-            }
-        } else {
-            CurrentPanel = null;
-            CurrentOptionsPane = null;
-
-            for (int x = 0; x < MenuPanels.Length; x++) {
-                MenuPanels[x].Visible = false;
-            }
-        }
-    }
-
-    public void DisplayMenu(String path) {
-        CurrentPanel = GetNode<Container>(path);
-        CurrentOptionsPane = CurrentPanel.GetNodeOrNull<OptionsPane>("ColorRect/OptionsPane");
-
-        for (int x = 0; x < MenuPanels.Length; x++) {
-            if (MenuPanels[x].Name.Equals(path)) {
-                MenuPanels[x].Visible = true;
-            } else {
-                MenuPanels[x].Visible = false;
-            }
-        }
-    }*/
 
     public void DisplayMenu(Container contRef) {
         CurrentPanel = contRef;

@@ -53,6 +53,8 @@ public class OptionsPane : Container {
             AddChild(Options[Options.Count - 1]);
         } else if (text.Substring(0, (text.Length < 5 ? 0 : 5)).Equals(".SWAP")) {
             this.AddVisualSwapper((String[]) this.Get(text.Substring(6, text.Length-6)));
+        } else if (text.Equals(".Credits")) {
+            AddOptionNoSelect("SEE:\n\"res://CREDITS.RTFD\"", 0.5f);
         } else {
             Options.Add(OptionTemplate.Duplicate());
             Options[Options.Count - 1].GetNode<Label>("Label").Text = text;
@@ -60,9 +62,10 @@ public class OptionsPane : Container {
         }
     }
 
-    public void AddOptionNoSelect(String text) {
+    public void AddOptionNoSelect(String text, float scale = 1) {
         Node OptionNoSelect = OptionTemplate.Duplicate();
         OptionNoSelect.GetNode<Label>("Label").Text = text;
+        OptionNoSelect.GetNode<Label>("Label").Set("custom_fonts/font/size", (int) (16*scale));
         OptionNoSelect.GetNode<TextureRect>("Selector").QueueFree();
         AddChild(OptionNoSelect);
     }

@@ -318,7 +318,7 @@ public class PacLevel : Node {
             GetNode<Label> ("PacUI/DebugPanel/PhaseLabel").Text = "FLEE";
 
             // Set timer to end scared mode.
-            scaredTimer.QueueFree();
+            if (scaredTimer != null) scaredTimer.QueueFree();
             EmitSignal("GhostFlashingAnimation", false);
             scaredTimer = new Timer();
             scaredTimer.ProcessMode = (Timer.TimerProcessMode) 0;
